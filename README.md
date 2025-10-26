@@ -1,104 +1,93 @@
-## 🔧 Kā palaist spēli
+# 🕹️ 2D Survival Game
 
-Lai palaistu spēli, izpildiet šos soļus:
+## 🔧 How to Run the Game
 
-1. Klonējiet šo repozitoriju vai lejupielādējiet ZIP arhīvu:
-   - Ja klonējat:  
+To run the game, follow these steps:
+
+1. Clone this repository or download the ZIP archive:
+   - If cloning:  
      ```bash
      git clone https://github.com/Malekitos/survive-protocol
      ```
-   - Vai lejupielādējiet `.zip` un atarhivējiet to savā datorā.
+   - Or download the `.zip` file and extract it on your computer.
 
-2. Pēc projekta atarhivēšanas, atveriet projekta mapi.
+2. After extracting the project, open the project folder.
 
-3. Iekšējā mapē `BIN` atradīsiet mapes:
-   - `Windows` — ja izmantojat Windows operētājsistēmu;
-   - `Linux` — ja izmantojat Linux.
+3. In the inner `BIN` folder, you'll find directories:
+   - `Windows` — if you're using Windows operating system;
+   - `Linux` — if you're using Linux.
 
-4. Atveriet atbilstošo mapi un palaidiet tajā esošo izpildāmo failu, lai sāktu spēli.
+4. Open the appropriate directory and run the executable file inside to start the game.
 
+---
 
-# 🕹️ 2D Izdzīvošanas Spēle
+In this 2D survival game, the player's main objective is to **survive as long as possible** and set their personal record, which they can then boast about to friends.
 
-Šajā 2D izdzīvošanas spēlē spēlētāja galvenais uzdevums ir **izdzīvot pēc iespējas ilgāk** un uzstādīt savu rekordu, ar kuru pēc tam var lepoties draugu priekšā.
+## 🌍 Procedurally Generated World
 
+Each time you start the game, a new world is generated using the **Perlin noise algorithm**, ensuring a unique experience in every playthrough.
 
-## 🌍 Procedurāli Ģenerēta Pasaule
+## 🌞 Day and Night Cycle
 
-Katru reizi, kad sākat spēli, tiek ģenerēta jauna pasaule, izmantojot **Perlin trokšņa algoritmu**, kas nodrošina unikālu pieredzi katrā spēlē.
+- **During the day** the player collects resources needed for survival.  
+- **At night** they must defend against enemies that attack the player.
 
+## ⛏️ Mineshafts
 
-## 🌞 Dienas un Nakts Cikls
+- Entrances to mineshafts can be found on the map.
+- When the player enters a mineshaft, the entrance closes and **cannot be returned to**.
+- Mineshafts are procedurally generated — **each one is unique**.
+- **Valuable resources** can be obtained.
+- Each mineshaft has one or more **exit points**.
+- When exiting a mineshaft, the player **returns to the surface world**.
 
-- **Dienā** spēlētājs vāc resursus, kas nepieciešami izdzīvošanai.  
-- **Naktī** jāaizsargājas no pretiniekiem, kuri uzbrūk spēlētājam.
+## 🎒 Inventory and Crafting
 
+- The inventory system can be opened by pressing `TAB`.
+- If the player has sufficient quantities of specific resources, **crafting options become available** — new items can be created from collected materials.
+- At the bottom there's a **hotbar** that allows quick access to useful items or weapons.
 
-## ⛏️ Šahtas
+## ⚒️ Crafting System and Item Tiers
 
-- Uz kartes iespējams atrast ieejas šahtās.
-- Kad spēlētājs ieiet šahtā, šī ieeja tiek slēgta un tajā **vairs nevar atgriezties**.
-- Šahtas tiek ģenerētas procedurāli — **katra no tām ir unikāla**.
-- Iespējams iegūt **vērtīgus resursus**.
-- Katrā šahtā ir viens vai vairāki **izejas punkti**.
-- Izejot no šahtas, spēlētājs **atgriežas virszemes pasaulē**.
+- Various **tools** can be crafted, for example:
+  - **Swords** — designed for combat with enemies,
+  - **Pickaxes** — for efficient resource extraction from stone or ores,
+  - **Axes** — for faster tree cutting and resource gathering.
+- When crafting the appropriate tool:
+  - **Harvesting speed** increases for that specific resource,
+  - **Attack power** increases against enemies.
 
+### 🔼 Item Tiers
 
-## 🎒 Inventārs un Kraftešana
+- Each item has **multiple upgrade tiers**.
+- For example:
+  - **Wooden sword** is a **Tier 1** weapon crafted from **wood and stone**.
+  - To create a **stone sword** (**Tier 2**), you must **first craft a wooden sword**.
+- **It's not possible to skip tiers** — progress happens **gradually**, step by step.
 
-- Inventāra sistēmu var atvērt, nospiežot `TAB`.
-- Ja spēlētājam ir pietiekams daudzums noteiktu resursu, kļūst pieejamas **kraftešanas iespējas** — iespējams izveidot jaunus objektus no savāktajiem materiāliem.
-- Apakšējā daļā atrodas **hotbar**, kas ļauj ātri piekļūt noderīgiem priekšmetiem vai ieročiem.
+## 🩸 Health and Armor System
 
+- When **fighting** enemies or **gathering resources**, their **remaining HP** is displayed.
+- The player's status is shown at the bottom of the screen:
+  - 🟩 **Green bar** — health.
+  - 🟦 **Blue bar** — armor.
+- Initially, there is no armor, so the blue bar **is not visible**.
+- When armor is crafted, the blue bar **gradually fills**.
+- The more armor, **the less damage** the player takes from enemies.
 
-## ⚒️ Kraftešanas Sistēma un Priekšmetu Līmeņi
+## 💾 Automatic Saving and Returning
 
-- Ir iespējams izveidot dažādus **instrumentus**, piemēram:
-  - **zobeni** — paredzēti cīņai ar pretiniekiem,
-  - **kirkas** — efektīvai resursu ieguvei no akmens vai rūdām,
-  - **cirvji** — ātrākai koku ciršanai un resursu vākšanai.
-- Izveidojot atbilstošu instrumentu:
-  - tiek **palielināts iegūšanas ātrums** konkrētajam resursam,
-  - tiek **palielināts uzbrukuma spēks** pretiniekiem.
+- When exiting the game world, **it is automatically saved**.
+- Even if you completely close the game, by pressing the **Resume Game** button, you'll return to **the exact same location** where you left the game.
+- Not only the location is saved, but also all your **resources, status, and progress**.
 
-### 🔼 Priekšmetu Līmeņi
+## 📘 Instructions Section
 
-- Katram priekšmetam ir **vairāki uzlabojumu līmeņi**.
-- Piemēram:
-  - **Koka zobens** ir **1. līmeņa** ierocis, kas tiek kraftēts no **koka un akmens**.
-  - Lai izveidotu **akmens zobenu** (**2. līmenis**), vispirms **jāizveido koka zobens**.
-- **Nav iespējams izlaist līmeņus** — progress notiek **pakāpeniski**, soli pa solim.
+- The main game menu has an **instructions section** that describes:
+  - How to start the game,
+  - How to survive and efficiently gather resources,
+  - How to use game systems like **inventory, crafting, combat**, etc.
 
-
-## 🩸 Dzīvības un Bruņas Sistēma
-
-- Uzsākot **cīņu** ar pretiniekiem vai **iegūstot resursus**, tiek rādīts to **atlikušais HP**.
-- Spēlētāja statuss redzams ekrāna apakšā:
-  - 🟩 **Zaļa josla** — veselība.
-  - 🟦 **Zila josla** — bruņas.
-- Sākumā bruņu nav, tāpēc zila josla **nav redzama**.
-- Kad tiek izgatavotas bruņas, zila josla **pakāpeniski aizpildās**.
-- Jo vairāk bruņu, **jo mazāk kaitējuma** spēlētājs saņem no ienaidniekiem.
-
-
-## 💾 Automātiska Saglabāšana un Atgriešanās
-
-- Izejot no spēles pasaules, **tā tiek automātiski saglabāta**.
-- Pat ja spēli aizver pilnībā, nospiežot pogu **Resume Game**, jūs atgriezīsieties **tieši tajā pašā vietā**, kur pārtraucāt spēli.
-- Saglabājas ne tikai atrašanās vieta, bet arī visi jūsu **resursi, stāvokļi un progres**.
-
-
-## 📘 Instrukciju Sadaļa
-
-- Spēles galvenajā izvēlnē pieejama sadaļa ar **instrukcijām**, kur aprakstīts:
-  - Kā sākt spēli,
-  - Kā izdzīvot un efektīvi vākt resursus,
-  - Kā izmantot spēles sistēmas, piemēram, **inventāru, kraftešanu, cīņu** utt.
-
-
-## 🎯 Mērķis
-
-Izdzīvot pēc iespējas ilgāk, **gudri pārvaldot resursus**, aizsargājoties no briesmām un uzstādot jaunu **personīgo rekordu**!
 
 
 ![Screenshot From 2025-05-31 18-32-42](https://github.com/user-attachments/assets/91a95fef-8ac6-437c-8093-e171e40b80de)
